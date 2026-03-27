@@ -1,0 +1,17 @@
+﻿#DEFAULT_IPSET_RULES_START
+ipset=/tawk.to/i2e1.in/wiom.in/startwiom.in/i2e1.com/mylinq.in/linq.app/fbcdn.net/facebook.net/facebook.com/akamaihd.net/fb
+ipset=/interviewingap.nfieldmr.com/interviewingap-l2.nfieldmr.com/nfieldap-cdn-storage.azureedge.net/kantar
+#DEFAULT_IPSET_RULES_END
+
+#DNS_LOGGING_START
+log-queries
+log-facility=/tmp/dnsmasq.log
+log-async=5
+cache-size=0
+bogus-priv
+domain-needed
+no-resolv
+strict-order
+server=8.8.8.8
+server=8.8.4.4
+#DNS_LOGGING_END

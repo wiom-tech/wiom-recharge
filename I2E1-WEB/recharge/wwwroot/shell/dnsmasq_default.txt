@@ -1,0 +1,4 @@
+#DEFAULT_IPSET_RULES_START
+ipset=/tawk.to/i2e1.in/wiom.in/startwiom.in/i2e1.com/mylinq.in/linq.app/fbcdn.net/facebook.net/facebook.com/akamaihd.net/fb
+ipset=/interviewingap.nfieldmr.com/interviewingap-l2.nfieldmr.com/nfieldap-cdn-storage.azureedge.net/kantar
+#DEFAULT_IPSET_RULES_END

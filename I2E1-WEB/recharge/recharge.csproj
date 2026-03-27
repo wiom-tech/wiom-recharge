@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>recharge</RootNamespace>
+    <UserSecretsId>fa714665-fcec-44fe-921d-488d8c550482</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="wwwroot\shell\dnslogger.sh.txt" />
+    <None Include="wwwroot\shell\dnsmasq_awk.txt" />
+    <None Include="wwwroot\shell\dnsmasq_default.txt" />
+    <None Include="wwwroot\shell\dnsmasq_dnslogger.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="170.13.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\i2e1-core\i2e1-core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.10.*" />
+  </ItemGroup>
+</Project>

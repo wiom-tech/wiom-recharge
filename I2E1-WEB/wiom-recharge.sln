@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "recharge", "recharge\recharge.csproj", "{693818AC-EAFF-457A-9498-5301C5645225}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "i2e1-core", "i2e1-core\i2e1-core.csproj", "{AA6EEDB4-5FAA-46C1-9D20-7DA107B12BA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{693818AC-EAFF-457A-9498-5301C5645225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693818AC-EAFF-457A-9498-5301C5645225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693818AC-EAFF-457A-9498-5301C5645225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693818AC-EAFF-457A-9498-5301C5645225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6EEDB4-5FAA-46C1-9D20-7DA107B12BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6EEDB4-5FAA-46C1-9D20-7DA107B12BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6EEDB4-5FAA-46C1-9D20-7DA107B12BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6EEDB4-5FAA-46C1-9D20-7DA107B12BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A2B306D-0ACB-4229-A220-DE03F1ECA963}
+		LessCompiler = 300d55a0-644a-4f7e-88a7-f11722067bd5,fcc55223-d364-4da2-a4e5-fb1705f5da83
+	EndGlobalSection
+EndGlobal

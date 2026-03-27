@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  web:
+    image: i2e1-mgmt-services:latest
+    build:
+      context: .
+      dockerfile: services.Dockerfile
+    ports:
+      - "80:80"

@@ -1,0 +1,393 @@
+version: '3.4'
+
+services:
+  i2e1-payment:
+    image: ${DOCKER_REGISTRY-}i2e1payment
+    environment:
+      I2E1_CONFIGURATION_FILE: i2e1-payment/i2e1-web-test.json
+  maxima-payment-i2e1:
+    image: maxima-payment-i2e1
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=qa
+        - SERVER=maxima-payment-i2e1
+      dockerfile: payment.Dockerfile
+    ports :
+        - "80:80"
+  booking-qa-i2e1:
+    image: booking-qa-i2e1
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=qa
+        - SERVER=booking-qa-i2e1
+      dockerfile: booking.Dockerfile
+    ports :
+        - "80:80"
+  booking-dev-i2e1:
+    image: booking-dev-i2e1
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=dev
+        - SERVER=booking-dev-i2e1
+      dockerfile: booking.Dockerfile
+    ports :
+        - "80:80"
+  maxima-dbpipeline-i2e1:
+    image: maxima-dbpipeline-i2e1
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=qa
+        - SERVER=maxima-dbpipeline-i2e1
+      dockerfile: dbPipeline.Dockerfile
+    ports :
+        - "80:80"        
+  maxima-partner-i2e1:
+    image: maxima-partner-i2e1
+    build:
+        context: .
+        args:
+            - ENVIRONMENT=qa
+            - SERVER=maxima-partner-i2e1
+        dockerfile: partner.Dockerfile
+    ports :
+        - "80:80"
+  maxima-admin-services:
+      image: maxima-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=qa
+          - SERVER=maxima-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  maxima-i2e1-login:
+      image: maxima-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=qa
+          - SERVER=maxima-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  maxima-remote-i2e1:
+      image: maxima-remote-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=qa
+          - SERVER=maxima-remote-i2e1
+        dockerfile: remote.Dockerfile
+      ports :
+          - "80:80"
+  maxima-interaction-i2e1:
+      image: maxima-interaction-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=qa
+          - SERVER=maxima-interaction-i2e1
+        dockerfile: interaction.Dockerfile
+      ports :
+          - "80:80"
+  aryan-admin-services:
+      image: aryan-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=aryan
+          - SERVER=aryan-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  ezio-admin-services:
+      image: ezio-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=ezio
+          - SERVER=ezio-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  ezio-i2e1-login:
+      image: ezio-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=ezio
+          - SERVER=ezio-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  aryan-i2e1-login:
+      image: aryan-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=aryan
+          - SERVER=aryan-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  eddy-admin-services:
+      image: eddy-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=eddy
+          - SERVER=eddy-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  eddy-i2e1-login:
+      image: eddy-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=eddy
+          - SERVER=eddy-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  infinity-admin-services:
+      image: infinity-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=infinity
+          - SERVER=infinity-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  infinity-i2e1-login:
+      image: infinity-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=infinity
+          - SERVER=infinity-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  paisa-i2e1-login:
+      image: paisa-i2e1-login
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=paisa
+          - SERVER=paisa-i2e1-login
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  paisa-admin-services:
+      image: paisa-admin-services
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=paisa
+          - SERVER=paisa-admin-services
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  payment-paisa-i2e1:
+      image: payment-paisa-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=paisa
+          - SERVER=payment-paisa-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  payment-ezio-i2e1:
+      image: payment-ezio-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=ezio
+          - SERVER=payment-ezio-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  payment-eddy-i2e1:
+      image: payment-eddy-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=eddy
+          - SERVER=payment-eddy-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  payment-infinity-i2e1:
+      image: payment-infinity-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=infinity
+          - SERVER=payment-infinity-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  interaction-prod-i2e1:
+      image: interaction-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=interaction-prod-i2e1
+        dockerfile: interaction.Dockerfile
+      ports :
+          - "80:80"
+  interaction-stage-i2e1:
+      image: interaction-stage-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=stage
+          - SERVER=interaction-stage-i2e1
+        dockerfile: interaction.Dockerfile
+      ports :
+          - "80:80"
+  remote-prod-i2e1:
+      image: remote-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=remote-prod-i2e1
+        dockerfile: remote.Dockerfile
+      ports :
+          - "80:80"
+  wifidog-prod-i2e1:
+      image: wifidog-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=wifidog-prod-i2e1
+        dockerfile: remote.Dockerfile
+      ports :
+          - "80:80"
+  wifidog-aryan-i2e1:
+      image: wifidog-aryan-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=aryan
+          - SERVER=wifidog-aryan-i2e1
+        dockerfile: remote.Dockerfile
+      ports :
+          - "80:80"
+  auth-prod-i2e1:
+      image: auth-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=auth-prod-i2e1
+        dockerfile: remote.Dockerfile
+      ports :
+          - "80:80"
+  services-prod-i2e1:
+      image: services-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=services-prod-i2e1
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  services-stage-i2e1:
+      image: services-stage-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=stage
+          - SERVER=services-stage-i2e1
+        dockerfile: services.Dockerfile
+      ports :
+          - "80:80"
+  login-prod-i2e1:
+      image: login-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=login-prod-i2e1
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  login-stage-i2e1:
+      image: login-stage-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=stage
+          - SERVER=login-stage-i2e1
+        dockerfile: login.Dockerfile
+      ports :
+          - "80:80"
+  payment-prod-i2e1:
+      image: payment-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=payment-prod-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  payment-stage-i2e1:
+      image: payment-stage-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=stage
+          - SERVER=payment-stage-i2e1
+        dockerfile: payment.Dockerfile
+      ports :
+          - "80:80"
+  partner-ezio-i2e1:
+    image: partner-ezio-i2e1
+    build:
+        context: .
+        args:
+            - ENVIRONMENT=ezio
+        dockerfile: partner.Dockerfile
+    ports :
+    - "80:80"
+  partner-prod-i2e1:
+    image: partner-prod-i2e1
+    build:
+        context: .
+        args:
+            - ENVIRONMENT=prod
+        dockerfile: partner.Dockerfile
+    ports :
+        - "80:80"
+  partner-stage-i2e1:
+      image: partner-stage-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=stage
+        dockerfile: partner.Dockerfile
+  dbpipeline-prod-i2e1:
+      image: dbpipeline-prod-i2e1
+      build:
+        context: .
+        args:
+          - ENVIRONMENT=prod
+          - SERVER=dbpipeline-prod-i2e1
+        dockerfile: dbPipeline.Dockerfile
+      ports :
+          - "80:80"
+

@@ -1,0 +1,14 @@
+nasid=$(cat /etc/config/nasid)
+touch /tmp/dnspayload
+cat /dev/null > /tmp/dnspayload
+cat /tmp/dnsmasq.log | awk -v nasid=$nasid -f dnsmasq.awk > /tmp/dnspayload
+cat /dev/null > /tmp/dnsmasq.log
+lines=$(cat /tmp/dnspayload | wc -l)
+if [ $lines -eq 0 ];
+then
+	echo "No Logs to Upload $lines records"
+else
+	echo "Uploading $lines records:  http://dnslogger.wiom.in/api/DnsLogs?nasid=$nasid"
+	wget -4 -q -O /dev/null --timeout 5 --post-file /tmp/dnspayload  http://dnslogger.wiom.in/api/DnsLogs?nasid=$nasid
+fi
+rm -rf /tmp/dnspayload

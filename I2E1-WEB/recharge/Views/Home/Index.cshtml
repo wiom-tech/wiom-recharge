@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "ISP Api";
+}
+<script>
+    function submitForm(id, successCallback){
+        var formData = {};
+        $(id).find('input').each(function (e, x) 
+        { 
+            console.log(e, $(x).attr('name'));
+            if ($(x).attr('name'))
+            formData[$(x).attr('name')] = $(x).val();
+        })
+        $.ajax({
+            type: "POST",
+            url: $(id).attr('url'),
+            data: JSON.stringify(formData),
+            success: function (data) {
+                console.log(data);
+                successCallback(data)
+            },
+            dataType: "json",
+            contentType: "application/json",
+        });
+    }
+
+    function onCustomerDetailsSuccess(data){
+        if (data.status == 0)
+            $('#status').text("SUCCESS: " + JSON.stringify(data.data));
+        else
+            $('#status').text("FAILED: " + JSON.stringify(data.msg));
+    }
+    function onRechargeSuccess(data) {
+        if (data.status == 0)
+            $('#status1').text("SUCCESS: " + JSON.stringify(data.data));
+        else
+            $('#status1').text("FAILED: " + JSON.stringify(data.msg));
+    }
+</script>
+<div class="text-center">
+    <h1 class="display-4">Test Customer Details Api</h1>
+    <form id="customerDetailsForm" url="/Home/TestCustomerDetailsApi">
+        Url: <input style="width:100%" name="url" /><br />
+        SystemId: <input style="width:100%" name="systemId" /><br />
+        Password: <input style="width:100%" name="password" /><br />
+        Mobile: <input style="width:100%" name="mobile" /><br />
+        Username: <input style="width:100%" name="username" /><br /><br/>
+        <input type="button" value="Verify" onclick="submitForm('#customerDetailsForm', onCustomerDetailsSuccess)" />
+    </form>
+    <div id="status"></div>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Test Recharge Api</h1>
+    <form id="rechargeForm" url="/Home/TestRechargeApi">
+        Url: <input style="width:100%" name="url" /><br />
+        SystemId: <input style="width:100%" name="systemId" /><br />
+        Password: <input style="width:100%" name="password" /><br />
+        Username: <input style="width:100%" name="username" /><br />
+        Plan name: <input style="width:100%" name="planName" /><br /><br />
+        <input type="button" value="Verify" onclick="submitForm('#rechargeForm', onRechargeSuccess)" />
+    </form>
+    <div id="status1"></div>
+</div>
