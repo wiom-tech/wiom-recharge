@@ -45,7 +45,7 @@ namespace recharge.SQSListeners
                             payload = new JObject()
                             {
                                 { "nasid", nasid.GetLongId() },
-                                { "operationType", OperationType.SPEED_TEST.ToString() },
+                                { "operationType", OperationType.SPEED_TEST_V3.ToString() },
                                 { "operationParameter", string.Empty },
                                 { "operationPublishTime", DateTime.UtcNow.AddDays(7) },
                                 { "operationExpiryTime", DateTime.UtcNow.AddDays(15) },
