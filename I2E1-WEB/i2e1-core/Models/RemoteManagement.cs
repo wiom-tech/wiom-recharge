@@ -39,7 +39,8 @@ namespace i2e1_core.Models
         VPN_FIX,
 		SPEED_TEST,
 		OTP_CONF,
-        DISABLE_SS 
+        DISABLE_SS,
+        SPEED_TEST_V3
     }
     public enum OperationStatus
     {
